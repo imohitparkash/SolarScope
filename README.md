@@ -45,4 +45,4 @@ Then open `http://127.0.0.1:8000` in your browser.
 
 ## Status
 
-Actively maintained. Planned next: adding more solar system bodies (Mars, Venus) and a distance-over-time chart.
+Feature-complete for now, no active development. Possible future additions: more solar system bodies (Mars, Venus), a distance-over-time chart.

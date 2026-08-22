@@ -40,6 +40,17 @@ def get_moon_distance():
         # and give a smaller, more readable unit instead
         "distance_lunar_distance": round(distance.to(u.km).value / 384400, 4)
     }
+@app.get("/api/health")
+def health_check(response: Response):
+    try:
+        now = Time.now()
+        get_body_barycentric('earth', now)
+        return {"status": "ok", "checked_at": now.isot}
+    except Exception as e:
+        logger.error(f"Health check failed: {e}")
+        response.status_code = 503
+        return {"status": "error"}
+    return {"status": "ok", "checked_at": now.isot}
 
 app.mount("/", StaticFiles(directory="static", html=True), name="static")
 

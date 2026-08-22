@@ -2,6 +2,7 @@ env/
 __pycache__/
 *.pyc
 .vs/
+venv/
 # Visual Studio files
 *.pyproj
 *.pyproj.user
